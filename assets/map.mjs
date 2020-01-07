@@ -92,7 +92,6 @@ function getParks(baseUrl, stateArr, maxResults, apiKey) {
 // function called inside ajax call to display ajax response
 function displayResults(responseJson, maxResults) {
     console.log(responseJson);
-    // Clearing previous results
     $('.results-list').empty();
     // Looping through the response and formatting results
     for (let i = 0; i < responseJson.data.length & i < maxResults; i++) {    
