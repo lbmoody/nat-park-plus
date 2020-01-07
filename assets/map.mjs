@@ -29,9 +29,6 @@ function style() {
     };
 }
 
-// adds styles and states data to map
-// L.geoJson(statesData, { style: style }).addTo(map);
-
 // function to set on mousover that highlights the state you are currently hovering over
 function highlightFeature(e) {
     var layer = e.target;
@@ -42,8 +39,6 @@ function highlightFeature(e) {
         fillOpacity: 0.4,
         fillColor: '#f4511e'
     });
-
-    $("#state").text(`State: ${layer.feature.properties.name}`);
 
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
         layer.bringToFront();
@@ -121,6 +116,7 @@ function onEachFeature(feature, layer) {
 
 }
 
+// adds statesData, styles, and event function to map
 geojson = L.geoJson(statesData, {
     style: style,
     onEachFeature: onEachFeature
