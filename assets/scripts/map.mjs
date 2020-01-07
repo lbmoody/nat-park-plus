@@ -29,9 +29,6 @@ function style() {
     };
 }
 
-// adds styles and states data to map
-// L.geoJson(statesData, { style: style }).addTo(map);
-
 // function to set on mousover that highlights the state you are currently hovering over
 function highlightFeature(e) {
     var layer = e.target;
@@ -98,9 +95,15 @@ function displayResults(responseJson, maxResults) {
     $('.results-list').empty();
     // Looping through the response and formatting results
     for (let i = 0; i < responseJson.data.length & i < maxResults; i++) {    
-        $('.results-list').append(`<li><h3><a href="${responseJson.data[i].url}" target="_blank">${responseJson.data[i].fullName}</a></h3>
-        <p>${responseJson.data[i].description}</p>
-        </li>`);
+        $(".results-list").append(
+            `<div class="card">
+                <div class="card-content">
+                    <p class="title is-4">${responseJson.data[i].fullName}</p>
+                    <p class="subtitle is-4">${responseJson.data[i].designation}</p>
+                    <div class="content">${responseJson.data[i].description}</div>
+                </div>
+            </div>`
+        )
 
         
     }
