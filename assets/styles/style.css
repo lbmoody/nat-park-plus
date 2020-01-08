@@ -5,6 +5,7 @@
 
 .navbar {
     background-image: url();
+  
     
 }
 
@@ -18,6 +19,7 @@
 .footer {
     text-align: center;
     background-color: darkgray;
+    ;
 }
 
 html, body {
@@ -38,4 +40,20 @@ html, body {
   
   .card {
     margin: 20px;
+}
+
+.define{
+  text-align: center;
+}
+
+.button-search{
+  text-align: center;
+}
+
+#map {
+  margin-top: 20px;
+}
+
+.title {
+  margin-bottom: 20px;
 }
