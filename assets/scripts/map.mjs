@@ -13,17 +13,17 @@ function formatQueryParams(params) {
 
 // creates map
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + mapboxAccessToken, {
-    id: 'mapbox/light-v9',
+    id: 'mapbox/streets-v11',
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
 }).addTo(map);
 
 // creates styles for maps
 function style() {
     return {
-        fillColor: '#4dd0e1',
+        fillColor: '#ff5722',
         weight: 2,
         opacity: 1,
-        color: 'white',
+        color: '#bdbdbd',
         dashArray: '3',
         fillOpacity: 0.25
     };
@@ -34,10 +34,10 @@ function highlightFeature(e) {
     var layer = e.target;
     layer.setStyle({
         weight: 2,
-        color: '#f4511e',
+        color: '#ff5722',
         dashArray: '',
         fillOpacity: 0.4,
-        fillColor: '#f4511e'
+        fillColor: '#ff5722'
     });
 
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
@@ -51,10 +51,15 @@ function resetHighlight(e) {
     geojson.resetStyle(e.target);
 }
 
+function zoomToFeature(e) {
+    map.fitBounds(e.target.getBounds());
+    getStateAbbrv(e);
+}
+
 // function run on click event
 function getStateAbbrv(e) {
     stateAbbr = e.target.feature.properties.abbr
-    console.log(stateAbbr);
+    // console.log(stateAbbr);
     const baseUrl = 'https://api.nps.gov/api/v1/parks'
     const stateArr = stateAbbr;
     const maxResults = 50;
@@ -76,6 +81,9 @@ function getParks(baseUrl, stateArr, maxResults, apiKey) {
     console.log(url);
 
     // Fetch information, if there's an error display a message
+    var loader = $('<progress id="loading" class="progress is-large is-info" max="100">15%</progress>');
+    $(".results-list").empty();
+    $(".results-list").append(loader);
     fetch(url)
         .then(response => {
             if (response.ok) {
@@ -86,6 +94,7 @@ function getParks(baseUrl, stateArr, maxResults, apiKey) {
         .then(responseJson => displayResults(responseJson, maxResults))
         .catch(err => {
             $('.js-error-message').text(`Something went wrong: ${err.message}`);
+        
         });
 }
 
@@ -93,30 +102,44 @@ function getParks(baseUrl, stateArr, maxResults, apiKey) {
 function displayResults(responseJson, maxResults) {
     console.log(responseJson);
     $('.results-list').empty();
+    var markerArray = [];
     // Looping through the response and formatting results
     for (let i = 0; i < responseJson.data.length & i < maxResults; i++) {    
         $(".results-list").append(
             `<div class="card">
                 <div class="card-content">
-                    <p class="title is-4">${responseJson.data[i].fullName}</p>
+                    <p class="title is-4"><a href="parkdashboard.html?code=${responseJson.data[i].parkCode}">${responseJson.data[i].fullName}</a></p>
                     <p class="subtitle is-4">${responseJson.data[i].designation}</p>
                     <div class="content">${responseJson.data[i].description}</div>
                 </div>
             </div>`
         )
-
         
+        var latLong = responseJson.data[i].latLong;
+        if (latLong) {
+            var newlat = latLong.replace("lat:", "");
+            var coords = newlat.replace("long:", "");
+            var newCoords = coords.split(",");
+            var marker = L.marker([newCoords[0], newCoords[1]])
+            markerArray.push(marker);
+            marker.bindPopup(`<b>${responseJson.data[i].fullName}</b><br>${responseJson.data[i].designation}`).openPopup();
+        }
     }
+    // console.log(markerArray);
+    var group = L.featureGroup(markerArray).addTo(map);
+    // markers.addLayers(markerArray);
+
     $('.results').removeClass('hidden');
 
 }
+
 
 // event function that calls mouseover, mouseout, and click events
 function onEachFeature(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
         mouseout: resetHighlight,
-        click: getStateAbbrv
+        click: zoomToFeature
     });
 
 }
