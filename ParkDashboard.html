@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin=""/>
-    <link rel="stylesheet" href="./assets/styles/map.css/style.css">
+    <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
 
 <body>
@@ -32,10 +32,11 @@
             <div class="tile">
                 <div class="tile is-parent is-vertical">
                     <div class="tile is-child box has-background-primary">
-                        <p class="title">Nat Park Title</p>
+                        <p class="title park-title">Nat Park Title</p>
                     </div>
                     <div class="tile is-child box has-background-info">
-                        <p class="title">Insert Info</p>
+                        <p class="title">Park Info</p>
+                        <p class="park-info"></p>
                     </div>
                     <div class="title is-child box has-background-info">
                         <p class="title">Map of Park</p>
@@ -43,18 +44,18 @@
                 </div>
                 <div class="tile is-parent">
                     <div class="tile is-child box has-background-warning">
-                        <p class="title">Alerts</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae consectetur ipsam illo repudiandae! Suscipit ut molestiae nobis odit tempore nisi distinctio esse iure temporibus tenetur ratione optio reiciendis, itaque maxime.</p>
+                        <p class="title">Alerts <i class="fas fa-exclamation-triangle"></i></p>
+                        <p class="park-alerts"></p>
                     </div>
                 </div>
                 <div class="tile is-parent is-vertical">
                     <div class="tile is-child box">
-                        <p class="title">Daily Weather</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dicta laboriosam, delectus eum error ex unde minima quidem provident pariatur dolorem assumenda animi repellat magnam, exercitationem hic minus, blanditiis deleniti!</p>
+                        <p class="title">Weather <i class="fas fa-sun"></i></p>
+                        <p class="daily-weather"></p>
                     </div>
                     <div class="is-child box">
                         <p class="title">Campgrounds</p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla explicabo voluptatibus tenetur architecto sed impedit ut suscipit, iusto eius quaerat blanditiis consequuntur a dolores? Tenetur accusamus nulla esse voluptate. Facere!</p>
+                        <p class="camp-info"></p>
                     </div>
                 </div>
             </div>
@@ -62,6 +63,7 @@
                 <div class="tile is-parent">
                     <div class="tile is-child box">
                         <p class="title">Events</p>
+                        <p class="park-events"></p>
                     </div>
                 </div>
             </div>
@@ -84,10 +86,6 @@
 
 
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-    crossorigin=""></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.js"
-    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
-    <script type="module" src="./assets/map.mjs"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./assets/scripts/dashboard.js"></script>
 </body>
