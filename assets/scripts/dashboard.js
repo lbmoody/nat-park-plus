@@ -1,6 +1,7 @@
-var parkCode = "yell";
+var parkCode = window.location.search.replace("?", "");
 var apiKey = "ewon9dMmTNuHBaizXjLacObc4oexVjKwJbh4DHKs";
 var queryURL = "https://api.nps.gov/api/v1/parks" + "?parkCode=" + parkCode + "&api_key=" + apiKey;
+
 
 // park name AJAX call
 $.ajax({
