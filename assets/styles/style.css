@@ -4,9 +4,7 @@
 }
 
 .navbar {
-    background-image: url();
-  
-    
+    background-color:rgba(8, 105, 24, 0.788);
 }
 
 
@@ -56,4 +54,13 @@ html, body {
 
 .title {
   margin-bottom: 20px;
+}
+
+#polychrome {
+  width:auto;
+  height:auto;
+}
+
+.hero {
+  padding:0px, 0px, auto, 0px;
 }
