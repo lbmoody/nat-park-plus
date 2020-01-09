@@ -4,9 +4,7 @@
 }
 
 .navbar {
-    background-image: url();
-  
-    
+    background-color:rgb(16, 139, 22);
 }
 
 
@@ -75,6 +73,7 @@ body {
   margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 .input{
     max-width: 57%;
     display: block;
@@ -83,4 +82,19 @@ body {
 
 .soloButton {
     text-align: center;
+=======
+#polychrome {
+  width:auto;
+  height:auto;
+}
+
+.hero {
+  padding:0px, 0px, auto, 0px;
+}
+
+.hero-body {
+  background-image: url("https://cdn.pixabay.com/photo/2016/08/26/17/24/landscape-1622718__340.jpg");
+  background-size: cover;
+  height: calc(100vw * 0.13);
+>>>>>>> 17715b52c0aac85a427aeb3a3a53bbb20f1efa90
 }

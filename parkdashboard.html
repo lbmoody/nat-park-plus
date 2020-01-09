@@ -15,71 +15,98 @@
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="index.html">
-                <h1>NP+!!!</h1>
-            </a>
-            
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
+          <a class="navbar-item" href="index.html">
+            <img src="https://imageog.flaticon.com/icons/png/512/284/284469.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+            alt="National Parks Plus" width="60" height="100">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
         </div>
+        <div class="navbar-menu:">
+            <div class="navbar-start"> <!--LEFT SIDE-->
+                <a class="navbar-item has-text-white" href="map.html">
+                    Map
+                </a>
+                <a class="navbar-item has-text-white" href="parkdashboard.html">
+                    Dashboard
+                </a>
+                <a class="navbar-item has-text-white" href="index.html">
+                    Home
+                </a>
+                <a class="navbar-item has-text-white" href="search.html">
+                    Search
+                </a>
+                <!--LEFT SIDE-->
+            <div class="navbar-end">
+            </div>
+        </div> <!--RIGHT SIDE-->
     </nav>
-    <!-- Add Bulma content here!-->
-    <div class="tile is-ancestor">
-        <div class="tile is-8 is-vertical">
-            <div class="tile">
-                <div class="tile is-parent is-vertical">
-                    <div class="tile is-child box has-background-primary">
-                        <p class="title park-title">Nat Park Title</p>
-                    </div>
-                    <div class="tile is-child box has-background-info">
-                        <p class="title"><i class="fas fa-info-circle"></i> Park Info</p>
-                        <p class="park-info"></p>
-                    </div>
-                    <div class="title is-child box has-background-info">
-                        <p class="title">Map of Park</p>
-                    </div>
-                </div>
-                <div class="tile is-parent">
-                    <div class="tile is-child box has-background-warning">
-                        <p class="title">Alerts <i class="fas fa-exclamation-triangle"></i></p>
-                        <p class="park-alerts"></p>
-                    </div>
-                </div>
-                <div class="tile is-parent is-vertical">
-                    <div class="tile is-child box">
-                        <p class="title">Weather <i class="fas fa-sun"></i></p>
-                        <p class="daily-weather"></p>
-                    </div>
-                    <div class="is-child box">
-                        <p class="title">Campgrounds</p>
-                        <p class="camp-info"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="tile">
-                <div class="tile is-parent">
-                    <div class="tile is-child box">
-                        <p class="title">Events</p>
-                        <p class="park-events"></p>
-                    </div>
-                </div>
-            </div>
+
+    <section class="hero">
+        <div class="hero-body">
+          <!-- <div class="container">
+            <figure class="image">
+                <img id="polychrome" src=https://cdn.pixabay.com/photo/2016/08/26/17/24/landscape-1622718__340.jpg>
+              </figure>
+          </div> -->
         </div>
-        <div class="tile">
+    </section>
+
+    <div class="container">
+        <div class="tile is-ancestor">
+            <div class="tile is-8 is-vertical">
+                <div class="tile">
+                    <div class="tile is-parent is-vertical">
+                        <div class="tile is-child box has-background-primary">
+                            <p class="title park-title">Nat Park Title</p>
+                        </div>
+                        <div class="tile is-child box has-background-info">
+                            <p class="title"><i class="fas fa-info-circle"></i> Park Info</p>
+                            <p class="park-info"></p>
+                        </div>
+                        <div class="title is-child box has-background-info">
+                            <p class="title">Map of Park</p>
+                        </div>
+                    </div>
+                    <div class="tile is-parent">
+                        <div class="tile is-child box has-background-warning">
+                            <p class="title">Alerts <i class="fas fa-exclamation-triangle"></i></p>
+                            <p class="park-alerts"></p>
+                        </div>
+                    </div>
+                    <div class="tile is-parent is-vertical">
+                        <div class="tile is-child box">
+                            <p class="title">Weather <i class="fas fa-sun"></i></p>
+                            <p class="daily-weather"></p>
+                        </div>
+                        <div class="is-child box">
+                            <p class="title">Campgrounds</p>
+                            <p class="camp-info"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tile">
+                    <div class="tile is-parent">
+                        <div class="tile is-child box">
+                            <p class="title">Events</p>
+                            <p class="park-events"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="tile">
-                <div class="tile is-parent">
-                    <div class="tile is-child box">
-                        <p class="title">Current Weather</p>
-                        <p class="daily-temp"></p><!--Expand to take up 6 rows?-->
+                <div class="tile">
+                    <div class="tile is-parent">
+                        <div class="tile is-child box">
+                            <p class="title">Current Weather</p>
+                            <p class="daily-temp"></p><!--Expand to take up 6 rows?-->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 
     <footer class="footer">
         &copy; Copyright 2020 html.am
