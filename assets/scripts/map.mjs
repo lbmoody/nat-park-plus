@@ -108,7 +108,7 @@ function displayResults(responseJson, maxResults) {
         $(".results-list").append(
             `<div class="card">
                 <div class="card-content">
-                    <p class="title is-4"><a href="parkdashboard.html?code=${responseJson.data[i].parkCode}">${responseJson.data[i].fullName}</a></p>
+                    <p class="title is-4"><a href="parkdashboard.html?${responseJson.data[i].parkCode}">${responseJson.data[i].fullName}</a></p>
                     <p class="subtitle is-4">${responseJson.data[i].designation}</p>
                     <div class="content">${responseJson.data[i].description}</div>
                 </div>
