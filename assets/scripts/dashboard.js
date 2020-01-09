@@ -33,6 +33,9 @@ $.ajax({
     method: "GET"
 }).then (function (response) {
 $(".park-info").text(response.data[0].description);
+
+getMapData(response);
+
 });
 
 // alerts AJAX call
@@ -104,3 +107,24 @@ function showWeather (latitude, longitude) {
     });
     
 }
+
+// setting map
+function getMapData(response) {
+    var latLong = response.data[0].latLong;
+    var newLat = latLong.replace("lat:", "");
+    var coords = newLat.replace(" long:", "");
+    var newCoords = coords.split(",");
+    var latitude = newCoords[0];
+    var longitude = newCoords[1];
+
+    var mapboxAccessToken = 'pk.eyJ1IjoibGJtb29keTMiLCJhIjoiY2s1M2F5b3N1MDZvaDNucWtyYzcwaGRtZyJ9.QrJwm16_sr1Sfu2m6rkG-A';
+    var map = L.map('map').setView([latitude, longitude], 7);
+
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + mapboxAccessToken, {
+        id: 'mapbox/streets-v11',
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+    }).addTo(map);
+
+}
+
