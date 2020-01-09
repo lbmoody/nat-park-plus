@@ -21,16 +21,19 @@
     bottom: 0; */
     width: 100%;
     margin-top: 50px;
+    background-color: beige;
     
 }
 
 html, body {
     height: 100%;
     margin: 0;
+    background-color: beige
   }
 
 body {
   min-height: 100vh;
+  background-color: beige;
 }
 
   .wrapper {
@@ -96,3 +99,4 @@ body {
   background-size: cover;
   height: calc(100vw * 0.13);
 }
+
