@@ -17,13 +17,22 @@
 .footer {
     text-align: center;
     background-color: darkgray;
-    ;
+    /* position: fixed;
+    bottom: 0; */
+    width: 100%;
+    margin-top: 50px;
+    
 }
 
 html, body {
     height: 100%;
     margin: 0;
   }
+
+body {
+  min-height: 100vh;
+}
+
   .wrapper {
     min-height: 100%;
   
@@ -33,6 +42,7 @@ html, body {
   }
   .footer,
   .push {
+    
     height: 50px;
   }
   
@@ -46,6 +56,13 @@ html, body {
 
 .button-search{
   text-align: center;
+  margin-bottom: 50px;
+
+}
+
+.submit {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #map {
@@ -56,6 +73,16 @@ html, body {
   margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
+.input{
+    max-width: 57%;
+    display: block;
+    margin: 0 auto;
+}
+
+.soloButton {
+    text-align: center;
+=======
 #polychrome {
   width:auto;
   height:auto;
@@ -69,4 +96,5 @@ html, body {
   background-image: url("https://cdn.pixabay.com/photo/2016/08/26/17/24/landscape-1622718__340.jpg");
   background-size: cover;
   height: calc(100vw * 0.13);
+>>>>>>> 17715b52c0aac85a427aeb3a3a53bbb20f1efa90
 }
