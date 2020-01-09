@@ -21,6 +21,7 @@
     background-color: darkgray;
     /* position: fixed;
     bottom: 0; */
+    width: 100%;
     margin-top: 50px;
     
 }
@@ -29,6 +30,11 @@ html, body {
     height: 100%;
     margin: 0;
   }
+
+body {
+  min-height: 100vh;
+}
+
   .wrapper {
     min-height: 100%;
   
@@ -52,6 +58,13 @@ html, body {
 
 .button-search{
   text-align: center;
+  margin-bottom: 50px;
+
+}
+
+.submit {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #map {
@@ -60,4 +73,14 @@ html, body {
 
 .title {
   margin-bottom: 20px;
+}
+
+.input{
+    max-width: 57%;
+    display: block;
+    margin: 0 auto;
+}
+
+.soloButton {
+    text-align: center;
 }
