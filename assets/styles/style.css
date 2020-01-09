@@ -7,7 +7,13 @@
     background-color:rgb(16, 139, 22);
 }
 
-
+.index-container {
+    height: 95vh;
+    background-image: url("../Images/nature-1209302_1920.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 20vh;
+}
 
 .navbar-item {
     text-align: center;
@@ -20,7 +26,7 @@
     /* position: fixed;
     bottom: 0; */
     width: 100%;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     
 }
 
@@ -28,10 +34,6 @@ html, body {
     height: 100%;
     margin: 0;
   }
-
-body {
-  min-height: 100vh;
-}
 
   .wrapper {
     min-height: 100%;
@@ -52,7 +54,9 @@ body {
 
 .define{
   text-align: center;
+  margin-top: 50px;
 }
+
 
 .button-search{
   text-align: center;
