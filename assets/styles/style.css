@@ -4,9 +4,7 @@
 }
 
 .navbar {
-    background-image: url();
-  
-    
+    background-color:rgb(16, 139, 22);
 }
 
 
@@ -56,4 +54,19 @@ html, body {
 
 .title {
   margin-bottom: 20px;
+}
+
+#polychrome {
+  width:auto;
+  height:auto;
+}
+
+.hero {
+  padding:0px, 0px, auto, 0px;
+}
+
+.hero-body {
+  background-image: url("https://cdn.pixabay.com/photo/2016/08/26/17/24/landscape-1622718__340.jpg");
+  background-size: cover;
+  height: calc(100vw * 0.13);
 }
