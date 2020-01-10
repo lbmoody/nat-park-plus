@@ -1,6 +1,6 @@
 # Nat Park Plus
-  -A National Parks finder built using the National Parks API, a Weather API and the Bulma framework.
-    Launch Application [Here](https://lbmoody.github.io/nat-park-plus/)
+  - A National Parks finder built using the National Parks API, Weather API, Mapbox, leafletJS and the Bulma framework.
+     - Launch Application [Here](https://lbmoody.github.io/nat-park-plus/)
     
 
 ## api's
@@ -11,7 +11,7 @@
   - https://openweathermap.org/api
 
 - Mapbox
-  - 
+  - https://docs.mapbox.com/api/
 
 ## 3p library
 - Leafletjs
@@ -48,7 +48,7 @@
 
 
 ## Dashboard Page
-   - This is the meat of the site. This is a variety of important information will be populated so that you can get an idea of the area and potentially plan a visit. The information provided is, current weather, summary of weather in the area for the year, events, alerts, number of camp grounds, summary of park and map of park. It is set up in a appealing dashboard format that is easy to read on portable devices as well. 
+   - This is the meat of the site. Here you will see a variety of important information populated so that you can get an idea of the area and potentially plan a visit. The information provided is, current weather, summary of weather in the area for the year, events, alerts, number of camp grounds, summary of park and map of park. It is set up in a appealing dashboard format that is easy to read on portable devices as well. 
 
    <img width="1435" alt="Dashboard 2020-01-10 at 7 11 14 AM" src="https://user-images.githubusercontent.com/57784815/72170420-1477f580-338e-11ea-92b6-9124a1a44475.png">
 
