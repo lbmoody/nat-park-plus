@@ -84,18 +84,14 @@ function getParks(baseUrl, stateArr, maxResults, apiKey) {
     var loader = $('<progress id="loading" class="progress is-large is-info" max="100">15%</progress>');
     $(".results-list").empty();
     $(".results-list").append(loader);
-    fetch(url)
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-            throw new Error(response.statusText);
-        })
-        .then(responseJson => displayResults(responseJson, maxResults))
-        .catch(err => {
-            $('.js-error-message').text(`Something went wrong: ${err.message}`);
-        
-        });
+
+    // ajax calls 
+    $.ajax({
+        url: url,
+        method: "GET"
+    }).then( function (response) {
+        displayResults(response, maxResults);
+    })
 }
 
 // function called inside ajax call to display ajax response
