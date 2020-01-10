@@ -104,7 +104,7 @@ function displayResults(responseJson, maxResults) {
         $(".results-list").append(
             `<div class="card">
                 <div class="card-content">
-                    <p class="title is-4"><a href="parkdashboard.html?${responseJson.data[i].parkCode}">${responseJson.data[i].fullName}</a></p>
+                    <p class="title is-4"><a href="parkdashboard.html?${responseJson.data[i].parkCode}" name="${responseJson.data[i].id}">${responseJson.data[i].fullName}</a></p>
                     <p class="subtitle is-4">${responseJson.data[i].designation}</p>
                     <div class="content">${responseJson.data[i].description}</div>
                 </div>
@@ -118,7 +118,7 @@ function displayResults(responseJson, maxResults) {
             var newCoords = coords.split(",");
             var marker = L.marker([newCoords[0], newCoords[1]])
             markerArray.push(marker);
-            marker.bindPopup(`<b>${responseJson.data[i].fullName}</b><br>${responseJson.data[i].designation}`).openPopup();
+            marker.bindPopup(`<b>${responseJson.data[i].fullName}</b><br>${responseJson.data[i].designation}<br><a href="#${responseJson.data[i].id}">view</a>`).openPopup();
         }
     }
     // console.log(markerArray);
